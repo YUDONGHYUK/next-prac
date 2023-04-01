@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+
 type PantsPageProps = {
   params: {
     slug: string;
@@ -5,6 +7,8 @@ type PantsPageProps = {
 };
 
 export default function PantsPage({ params }: PantsPageProps) {
+  if (params.slug === 'nothing') notFound();
+
   return <h1>{params.slug} Products Page!</h1>;
 }
 
