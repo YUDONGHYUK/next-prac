@@ -6,6 +6,12 @@ type PantsPageProps = {
   };
 };
 
+export function generateMetadata({ params }: PantsPageProps) {
+  return {
+    title: `제품의 이름: ${params.slug}`,
+  };
+}
+
 export default function PantsPage({ params }: PantsPageProps) {
   if (params.slug === 'nothing') notFound();
 
