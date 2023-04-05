@@ -1,4 +1,7 @@
+import { getProduct, getProducts } from '@/service/products';
 import { notFound } from 'next/navigation';
+
+export const revalidate = 3;
 
 type PantsPageProps = {
   params: {
@@ -12,16 +15,22 @@ export function generateMetadata({ params }: PantsPageProps) {
   };
 }
 
-export default function PantsPage({ params }: PantsPageProps) {
-  if (params.slug === 'nothing') notFound();
+export default async function ProductPage({
+  params: { slug },
+}: PantsPageProps) {
+  const product = await getProduct(slug);
 
-  return <h1>{params.slug} Products Page!</h1>;
+  if (!product) {
+    notFound();
+  }
+
+  return <h1>{product.name} Products Page!</h1>;
 }
 
-export function generateStaticParams() {
-  const products = ['pants', 'skirts'];
+export async function generateStaticParams() {
+  const products = await getProducts();
 
   return products.map((product) => ({
-    slug: product,
+    slug: product.id,
   }));
 }
