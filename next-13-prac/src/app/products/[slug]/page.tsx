@@ -1,4 +1,4 @@
-import GoProductsButton from '@/components/GoProductsBUtton';
+import GoProductsButton from '@/components/GoProductsButton';
 import { getProduct, getProducts } from '@/service/products';
 import Image from 'next/image';
 import { notFound, redirect } from 'next/navigation';
