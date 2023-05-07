@@ -1,3 +1,6 @@
+// title: sanity UI에서 보여질 이름
+// name: database에 접근할 때 사용하는 이름(즉, key)
+
 export default {
   title: 'User',
   name: 'user',
@@ -60,4 +63,10 @@ export default {
       validation: (Rule) => Rule.unique(),
     },
   ],
+  preview: {
+    select: {
+      title: 'name',
+      subtitle: 'username',
+    },
+  },
 }
