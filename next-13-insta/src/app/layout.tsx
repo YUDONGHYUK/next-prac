@@ -18,17 +18,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={openSans.className}>
-      <body className="flex flex-col w-full max-w-screen-xl overflow-auto mx-auto">
+      <body className="w-full bg-neutral-50 overflow-auto">
         <AuthContext>
           <header className="sticky top-0 bg-white z-10 border-b">
-            <Navbar />
+            <div className="max-w-screen-xl mx-auto">
+              <Navbar />
+            </div>
           </header>
-          <main className="w-full flex flex-1 justify-center bg-neutral-50">
+          <main className="w-full flex justify-center">
             <SWRConfigContext>{children}</SWRConfigContext>
           </main>
         </AuthContext>
+        <div id="portal" />
       </body>
-      <div id="portal" />
     </html>
   );
 }
