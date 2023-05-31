@@ -17,7 +17,7 @@ export default function PostList() {
         </div>
       )}
       {posts && (
-        <ul className="">
+        <ul>
           {posts.map((post, index) => (
             <li key={post.id} className="mb-4">
               <PostListCard post={post} priority={index < 2} />

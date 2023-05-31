@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-// import { GridLoader } from 'react-spinners';
 
 const GridLoader = dynamic(
   () => import('react-spinners').then((lib) => lib.GridLoader),
