@@ -10,7 +10,7 @@ import { signIn, useSession } from 'next-auth/react';
 
 type Props = {
   post: SimplePost;
-  priority?: boolean;
+  priority: boolean;
 };
 
 export default function PostGridCard({ post, priority = false }: Props) {
