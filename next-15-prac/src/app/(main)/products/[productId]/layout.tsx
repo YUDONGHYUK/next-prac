@@ -1,4 +1,4 @@
-export default function ProductDetailsLayout({
+export default async function ProductDetailsLayout({
   children,
 }: {
   children: React.ReactNode;
